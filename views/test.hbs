@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+      /*Profile Pic Start*/
+.picture-container{
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}
+.picture{
+    width: 106px;
+    height: 106px;
+    background-color: #999999;
+    border: 4px solid #CCCCCC;
+    color: #FFFFFF;
+    border-radius: 50%;
+    margin: 0px auto;
+    overflow: hidden;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+.picture:hover{
+    border-color: #2ca8ff;
+}
+.content.ct-wizard-green .picture:hover{
+    border-color: #05ae0e;
+}
+.content.ct-wizard-blue .picture:hover{
+    border-color: #3472f7;
+}
+.content.ct-wizard-orange .picture:hover{
+    border-color: #ff9500;
+}
+.content.ct-wizard-red .picture:hover{
+    border-color: #ff3b30;
+}
+.picture input[type="file"] {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0 !important;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.picture-src{
+    width: 100%;
+    
+}
+/*Profile Pic End*/
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row form-group">
+            <div class="col-xs-12">
+                <ul class="nav nav-pills nav-justified thumbnail setup-panel" id="myNav">
+                    <li id="navStep1" class="li-nav active" step="#step-1">
+                        <a>
+                            <h4 class="list-group-item-heading">Introduction</h4>
+                            <p class="list-group-item-text">describe </p>
+                        </a>
+                    </li>
+                    <li id="navStep2" class="li-nav disabled" step="#step-2">
+                        <a>
+                            <h4 class="list-group-item-heading">Personal Imformation</h4>
+                            <p class="list-group-item-text">Describe details</p>
+                        </a>
+                    </li>
+                    {{!-- <li id="navStep3" class="li-nav disabled" step="#step-3">
+                        <a>
+                            <h4 class="list-group-item-heading">Step 3</h4>
+                            <p class="list-group-item-text">Third step description</p>
+                        </a>
+                    </li>
+                    <li id="navStep4" class="li-nav disabled" step="#step-4">
+                        <a>
+                            <h4 class="list-group-item-heading">Step 4</h4>
+                            <p class="list-group-item-text">Second step description</p>
+                        </a>
+                    </li> --}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <form class="container" action="/" method="post">
+        {{#if errors}}
+<ul class="list-group">
+{{#each errors}}
+<li class="list-group-item list-group-item-danger">{{this.msg}}</li>
+{{/each}}
+</ul>
+{{/if}}
+{{#if welcome}}
+<li class="list-group-item list-group-item-success">{{welcome}}</li>
+{{/if}}
+         <div class="row setup-content" id="step-1">
+            <div class="col-xs-12">
+                <div class="col-md-12 well text-center">
+                    <h1> Introduction</h1>
+                    <!-- <form> -->
+{{!--  --}}
+   
+                          <div class="form-group">
+
+  
+           <div class="container">
+    <div class="picture-container">
+        <div class="picture">
+            <img src="https://lh3.googleusercontent.com/LfmMVU71g-HKXTCP_QWlDOemmWg4Dn1rJjxeEsZKMNaQprgunDTtEuzmcwUBgupKQVTuP0vczT9bH32ywaF7h68mF-osUSBAeM6MxyhvJhG6HKZMTYjgEv3WkWCfLB7czfODidNQPdja99HMb4qhCY1uFS8X0OQOVGeuhdHy8ln7eyr-6MnkCcy64wl6S_S6ep9j7aJIIopZ9wxk7Iqm-gFjmBtg6KJVkBD0IA6BnS-XlIVpbqL5LYi62elCrbDgiaD6Oe8uluucbYeL1i9kgr4c1b_NBSNe6zFwj7vrju4Zdbax-GPHmiuirf2h86eKdRl7A5h8PXGrCDNIYMID-J7_KuHKqaM-I7W5yI00QDpG9x5q5xOQMgCy1bbu3St1paqt9KHrvNS_SCx-QJgBTOIWW6T0DHVlvV_9YF5UZpN7aV5a79xvN1Gdrc7spvSs82v6gta8AJHCgzNSWQw5QUR8EN_-cTPF6S-vifLa2KtRdRAV7q-CQvhMrbBCaEYY73bQcPZFd9XE7HIbHXwXYA=s200-no" class="picture-src" id="wizardPicturePreview" title="">
+            <input type="file" id="wizard-picture" class="">
+        </div>
+         <h6 class="">Choose Picture</h6>
+
+    </div>
+</div>
+     {{!-- <img src="http://www.xsjjys.com/data/out/96/WHDQ-512397294.png"
+      alt="Avatar" style="width:85px;border-radius: 50%;"> --}}
+      
+    <label for="exampleFormControlInput1">Your name</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Name">
+  </div>
+       <br /><hr />
+       <div class="form-group">
+    <label for="exampleFormControlTextarea1">Write a small description about yourself</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" 
+    placeholder="may be you can wrte about your goal" name="description" 
+    ></textarea>
+  </div>
+                    
+                    <!-- </form> -->
+                </div>
+                <input onclick="step1Next()" class="btn btn-md btn-info" value="Proceed">
+            </div>
+        </div>
+
+
+         <div class="row setup-content" id="step-2">
+            <div class="col-xs-12">
+                <div class="col-md-12 well text-center">
+                    <h1> Personal Imformation</h1>
+                    <!-- <form> -->
+<div class="row">
+                  <div class="form-group">
+    <label for="exampleFormControlSelect2" class="col-xs-2">State</label>
+    <div class="col-xs-4">
+    <select  class="form-control" id="exampleFormControlSelect2" name="state">
+      <option value="">------------Select State------------</option>
+<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+<option value="Andhra Pradesh">Andhra Pradesh</option>
+<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+<option value="Assam">Assam</option>
+<option value="Bihar">Bihar</option>
+<option value="Chandigarh">Chandigarh</option>
+<option value="Chhattisgarh">Chhattisgarh</option>
+<option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+<option value="Daman and Diu">Daman and Diu</option>
+<option value="Delhi">Delhi</option>
+<option value="Goa">Goa</option>
+<option value="Gujarat">Gujarat</option>
+<option value="Haryana">Haryana</option>
+<option value="Himachal Pradesh">Himachal Pradesh</option>
+<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+<option value="Jharkhand">Jharkhand</option>
+<option value="Karnataka">Karnataka</option>
+<option value="Kerala">Kerala</option>
+<option value="Lakshadweep">Lakshadweep</option>
+<option value="Madhya Pradesh">Madhya Pradesh</option>
+<option value="Maharashtra">Maharashtra</option>
+<option value="Manipur">Manipur</option>
+<option value="Meghalaya">Meghalaya</option>
+<option value="Mizoram">Mizoram</option>
+<option value="Nagaland">Nagaland</option>
+<option value="Orissa">Orissa</option>
+<option value="Pondicherry">Pondicherry</option>
+<option value="Punjab">Punjab</option>
+<option value="Rajasthan">Rajasthan</option>
+<option value="Sikkim">Sikkim</option>
+<option value="Tamil Nadu">Tamil Nadu</option>
+<option value="Tripura">Tripura</option>
+<option value="Uttaranchal">Uttaranchal</option>
+<option value="Uttar Pradesh">Uttar Pradesh</option>
+<option value="West Bengal">West Bengal</option>
+    </select>
+    </div>
+  </div>
+  </div>
+  <hr />
+<div class="row">
+    <div class="form-group">
+                    <label for="MobileNumber" class="col-xs-2" >Age</label>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="MobileNumber" placeholder="enter age" name="age" required>
+                    </div>
+              </div>
+            </div>  
+              <hr />
+
+
+         <div class="row">
+             <label for="MobileNumber" class="col-xs-2" >Ethnicity</label>
+         
+    <div class="col-xs-4">
+              <label class="radio-inline">
+      <input type="radio" name="ethnicity" value="Hispanic">Hispanic or Latino
+    </label>
+  <label class="radio-inline">
+      <input type="radio" name="ethnicity" value="Non-Hispanic">Non-Hispanic or Non-Latino
+    </label>
+    </div>
+    </div>
+    <br /><br />
+<hr />
+     <div class="row">
+             <label for="MobileNumber" class="col-xs-2" >Race</label>
+         
+    <div class="col-xs-4">
+              <label class="radio-inline">
+      <input type="radio" name="race" value="American Indian">Ameriacan Indian
+    </label>
+  <label class="radio-inline">
+      <input type="radio" name="race" value="Asian">Asian
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="race" value="Native Hawanai">Native Hawani 
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="race" value="Black American">Black or Aferican American
+    </label>
+      <label class="radio-inline">
+      <input type="radio" name="race" value="white">White
+    </label>
+    </div>
+    </div>  
+<br />
+<hr />
+<br />
+     <div class="row">
+             <label for="MobileNumber" class="col-xs-2" >Sex</label>
+         
+    <div class="col-xs-4">
+              <label class="radio-inline">
+      <input type="radio" name="sex" value="male">Male
+    </label>
+  <label class="radio-inline">
+      <input type="radio" name="sex" value="female">Female
+    </label>
+    </div>
+    </div>  
+     <br /><hr /><br />
+     <div class="row">
+    <div class="form-group">
+                    <label for="MobileNumber" class="col-xs-2" >Height</label>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="MobileNumber" placeholder="In inches" name="height">
+                    </div>
+              </div>
+            </div>  
+ <br /><hr /><br />
+        <div class="row">
+    <div class="form-group">
+                    <label for="MobileNumber" class="col-xs-2" >Weight</label>
+                    <div class="col-xs-4">
+                      <input type="text" class="form-control" id="MobileNumber" placeholder="in pound" name="weight">
+                    </div>
+              </div>
+            </div>      
+                           <!-- </form> -->
+                </div>
+                
+                    {{!-- <input onclick="step1Next()" class="btn btn-md btn-info" value="Next"> --}}
+                    <input type="submit" value="submit" class="btn btn-md btn-info">
+            </div>
+        </div>
+    </form>
+    
+  
+</body>
+<script>
+    var currentStep = 1;
+
+$(document).ready(function () {
+
+    $('.li-nav').click(function () {
+
+        var $targetStep = $($(this).attr('step'));
+        currentStep = parseInt($(this).attr('id').substr(7));
+
+        if (!$(this).hasClass('disabled')) {
+            $('.li-nav.active').removeClass('active');
+            $(this).addClass('active');
+            $('.setup-content').hide();
+            $targetStep.show();
+        }
+    });
+
+    $('#navStep1').click();
+
+});
+
+        
+
+function step1Next() {
+    //You can make only one function for next, and inside you can check the current step
+    if (true) {//Insert here your validation of the first step
+        currentStep += 1;
+        $('#navStep' + currentStep).removeClass('disabled');
+        $('#navStep' + currentStep).click();
+    }
+}
+
+function prevStep() {
+    //Notice that the btn prev not exist in the first step
+    currentStep -= 1;
+    $('#navStep' + currentStep).click();
+}
+
+function step2Next() {
+    if (true) {
+        $('#navStep3').removeClass('disabled');
+        $('#navStep3').click();
+    }
+}
+
+function step3Next() {
+    if (true) {
+        $('#navStep4').removeClass('disabled');
+        $('#navStep4').click();
+    }
+}
+
+$(document).ready(function(){
+// Prepare the preview for profile picture
+    $("#wizard-picture").change(function(){
+        readURL(this);
+    });
+});
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>
+</html>
